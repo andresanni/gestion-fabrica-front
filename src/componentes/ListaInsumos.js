@@ -1,6 +1,6 @@
 import './GlobalFilter';
 import { useEffect, useState } from "react";
-import { useTable, usePagination, useGlobalFilter } from "react-table";
+import { useTable, usePagination, useGlobalFilter,useSortBy} from "react-table";
 import React from "react";
 import '../estilos/ListaInsumos.css'
 import GlobalFilter from './GlobalFilter';
@@ -38,7 +38,8 @@ function ListaInsumos(){
             },
             {
               Header: 'Precio',
-              accessor: 'precio'
+              accessor: 'precio',
+              sortType: 'basic'
             },
           ],[]); 
 
@@ -46,7 +47,7 @@ function ListaInsumos(){
     //Guardo la info utilizando el hook useMemo, con la misma variable como dependencia
     
 
-    const tableInstance = useTable({columns,data}, useGlobalFilter,usePagination);
+    const tableInstance = useTable({columns,data}, useGlobalFilter,useSortBy,usePagination);
     //Creo una instancia de los datos de la tabla para react table. 
      
 
@@ -54,7 +55,7 @@ function ListaInsumos(){
       tableProps,
       tableBodyProps,
       headerGroups,
-      rows,
+      //rows,
       prepareRow,
       page,
       gotoPage,
@@ -70,7 +71,9 @@ function ListaInsumos(){
     } = tableInstance;
     //Extraigo las variables que voy a utilizar de la instancia que creamos con el useTable
 
-    
+    const handleSort = (column)=>{
+      tableInstance.setSortBy([{id: column.id, desc:!column.isSortedDesc}])
+    }
 
     return (
       <div className="contenedor-lista">
@@ -82,8 +85,12 @@ function ListaInsumos(){
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((header) => (
-                  <th {...header.getHeaderProps()}>
+                  <th {...header.getHeaderProps()}
+                    onClick={()=>handleSort(header)}
+                  >
                     {header.render("Header")}
+                    {header.isSorted ? (header.isSortedDesc ? ' ↓' : ' ↑') : ''}
+
                   </th>
                 ))}
               </tr>

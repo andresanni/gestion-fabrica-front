@@ -1,0 +1,16 @@
+.contenedor-buscador
+{
+    display: flex;
+    flex-direction: row;
+    width: 302px;
+    justify-content: space-evenly;
+    align-items: center;
+     
+
+}
+
+input
+{
+    height: 20px;
+    border-radius: 2%
+}

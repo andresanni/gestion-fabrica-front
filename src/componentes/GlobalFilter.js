@@ -1,9 +1,10 @@
 import React from "react";
+import '../estilos/GlobalFilter.css'
 
 function GlobalFilter({filter, setFilter}){
 
     return(
-        <span>
+        <span className="contenedor-buscador">
         Buscar: {" "}
         <input 
         value={filter || ""}
