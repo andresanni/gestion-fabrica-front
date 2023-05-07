@@ -9,7 +9,7 @@ function ListaInsumos(){
 
     const [insumos,setInsumos]= useState([]); //Hook de insumos
 
-    useEffect(()=>{ //Cuando se monta el componente , se captura la info
+    useEffect(()=>{ 
         async function fetchInsumos(){
             const response = await fetch ("http://localhost:8080/gestionFabrica/insumos/all");
             const data = await response.json();

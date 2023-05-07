@@ -22,7 +22,7 @@
   
   .formulario select,
   .formulario input {
-    /* height: 36px; */
+    /* height: 40px; */
     font-size: 14px;
     padding: 8px 16px;
     border: 1px solid #ccc;
@@ -39,6 +39,7 @@
   }
   
   .formulario input[type='submit'] {
+    height: 40px;
     background-color: #6d9eeb;
     color: #fff;
     font-size: 14px;
