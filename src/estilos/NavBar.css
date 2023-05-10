@@ -1,0 +1,21 @@
+#navbar
+{
+    width: 135px;    
+    height: 100vh; /* 100% de la altura de la ventana */
+    max-height: 100%;
+    position: fixed; /* fijar la barra de navegación en la parte superior de la pantalla */
+    top: 0;
+    left: 0;
+    color:white;
+    background-color: #312f2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;    
+}
+
+#navbar a
+{
+    font-size: 24px;
+}
+

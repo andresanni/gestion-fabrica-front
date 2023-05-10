@@ -1,0 +1,15 @@
+.app-container{
+    position: relative;
+    min-height: 100vh;
+}
+
+.main-container {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

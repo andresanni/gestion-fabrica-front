@@ -77,7 +77,7 @@ function ListaInsumos(){
 
     return (
       <div className="contenedor-lista">
-        <h2>Lista de Insumos</h2>
+        <h2>Insumos</h2>
         <GlobalFilter filter={tableInstance.state.globalFilter} setFilter={tableInstance.setGlobalFilter}/>
         <table className="lista" {...tableProps}>
           
